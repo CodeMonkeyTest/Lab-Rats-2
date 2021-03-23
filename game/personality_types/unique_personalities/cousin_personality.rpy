@@ -37,11 +37,11 @@ init 1300:
                 valid_titles.append("Cuz")
 
             if the_person.love < 0 and the_person.sluttiness > 40:
-                valid_titles.append("Dildo")
+                valid_titles.append("Breeding Slave")
 
                 if the_person.obedience < 20:
-                    valid_titles.append("Cock slave")
-                    valid_titles.append("Slave")
+                    valid_titles.append("Semen Donor")
+                    valid_titles.append("Cum Factory")
             return valid_titles
 
         cousin_personality = Personality("cousin", default_prefix = "introvert",
@@ -313,7 +313,7 @@ label cousin_cum_pullout(the_person):
                 "She moans aggressively."
             else:
                 the_person "I... Oh fuck, I can't think straight! Take that condom off before you cum [the_person.mc_title]!"
-                the_person "Don't waste your load, put it into my fertile little pussy! Try and get me fucking pregnant!"
+                the_person "Don't you dare waste your load, put it into my fertile little pussy! Try and get me fucking pregnant!"
 
             menu: #TODO: Add a varient of this normally so you can stealth a girl (don't do that in real life, it's super fucked up).
                 "Take off the condom.":
@@ -323,15 +323,15 @@ label cousin_cum_pullout(the_person):
                     "You ignore [the_person.possessive_title]'s cum-drunk offer and keep the condom in place."
 
         else:
-            the_person "Yeah? My tight, wet, pussy is going to make you cum? Then fucking do it!"
+            the_person "Yeah? Is your cousins tight, wet, pussy is going to make you cum? Then fucking do it!"
     else:
         if the_person.wants_creampie():
             if the_person.on_birth_control or the_person.event_triggers_dict.get("preg_knows", False):
-                the_person "Hurry up! Cum for me [the_person.mc_title]!"
+                the_person "Hurry up! Cum for me [the_person.mc_title]! We're not stopping till you've filled my pussy with your cum!"
             else:
-                the_person "Yeah? Is my pussy going to make you cum?"
-                "She pants happily."
-                the_person "Then hurry up and do it! Give me that creampie!"
+                the_person "Yeah? Is my pussy going to make you cum, you little perv? Well I'm not on birth control so...I dare you cum inside me!"
+                "She puts her arms around your neck and pulls you close."
+                the_person "C'mon, do it! See if you can get your own cousin pregnant! Make a baby in me [the_person.mc_title]!"
         else:
             if the_person.on_birth_control:
                 the_person "Oh fuck, you better pull out!"
@@ -348,8 +348,8 @@ label cousin_cum_condom(the_person):
     elif the_person.wants_creampie():
         the_person "Oh, I can actually feel it through the condom."
         "She sighs happily and wiggles her hips."
-        the_person "Fuck, I wish weren't wearing that... I want a hot load splattered inside pussy."
-        the_person "I guess it's a good thing you aren't knocking me up though."
+        the_person "Fuck, I wish weren't wearing that... I want your hot load splattered inside pussy."
+        the_person "It's guess its a good thing that you didn't coat my fertile womb with all your hot, sticky, virile cum. You might have even gotten me pregnant..."
 
     else:
         the_person "Oh fuck, I can actually feel your cum through the condom... It didn't break, did it?" #TODO: Add a way for it to break (on realsitic mode)
