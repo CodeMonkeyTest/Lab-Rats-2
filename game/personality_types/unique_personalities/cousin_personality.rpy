@@ -327,11 +327,11 @@ label cousin_cum_pullout(the_person):
     else:
         if the_person.wants_creampie():
             if the_person.on_birth_control or the_person.event_triggers_dict.get("preg_knows", False):
-                the_person "Hurry up! Cum for me [the_person.mc_title]! We're not stopping till you've filled my pussy with your cum!"
+                the_person "Hurry up! Cum for me [the_person.mc_title]! We're not stopping utill you've filled my pussy with cum!"
             else:
                 the_person "Yeah? Is my pussy going to make you cum, you little perv? Well I'm not on birth control so...I dare you cum inside me!"
                 "She puts her arms around your neck and pulls you close."
-                the_person "C'mon, do it! See if you can get your own cousin pregnant! Make a baby in me [the_person.mc_title]!"
+                the_person "It's not like you can get me pregnant! I bet you can't, come on! Take your best shot and put a baby inside me [the_person.mc_title]!"
         else:
             if the_person.on_birth_control:
                 the_person "Oh fuck, you better pull out!"
@@ -348,8 +348,8 @@ label cousin_cum_condom(the_person):
     elif the_person.wants_creampie():
         the_person "Oh, I can actually feel it through the condom."
         "She sighs happily and wiggles her hips."
-        the_person "Fuck, I wish weren't wearing that... I want your hot load splattered inside pussy."
-        the_person "It's guess its a good thing that you didn't coat my fertile womb with all your hot, sticky, virile cum. You might have even gotten me pregnant..."
+        the_person "Fuck, I wish you weren't wearing that... I want your hot load splattered inside pussy."
+        the_person "Why are you even wearing that when you could be filling my fertile womb with all your hot, sticky, virile cum. You might even get me pregnant..."
 
     else:
         the_person "Oh fuck, I can actually feel your cum through the condom... It didn't break, did it?" #TODO: Add a way for it to break (on realsitic mode)
@@ -360,13 +360,13 @@ label cousin_cum_condom(the_person):
 label cousin_cum_vagina(the_person):
     if the_person.wants_creampie():
         if the_person.on_birth_control or the_person.event_triggers_dict.get("preg_knows", False):
-            the_person "Oh fuck..."
+            the_person "Oh fuck yes, cum inside me! God I wish I weren't on the pill!"
 
         else:
-            the_person "Oh fuck, you really did it. You know I'm not on the pill, right?"
+            the_person "Oh fuck yes, you're cumming inside me! Even though I'm not on the pill, you're cumming so much! I bet you love that you pervert!"
             $ the_person.update_birth_control_knowledge()
-            the_person "I bet you're a pervert like that and you wanted to get your own cousin knocked up."
-            the_person "Whatever, you're probably shooting blanks anyways."
+            the_person "Well guess what? I'm a pervert just like you. I want you to knock me up! Do it [the_person.mc_title]! Breed your cousin! Make me your little slut!"
+            the_person "Show me I'm yours! Hold me down on your cock and claim me! Make me take all your hot cum like a good little slut!"
 
     else:
         if the_person.on_birth_control:
@@ -443,7 +443,7 @@ label cousin_touching_vagina_taboo_break(the_person):
         the_person "Hold it, you little fucking perv."
         mc.name "What, scared I'll notice how wet you are?"
         the_person "Ha! It's so cute you think you could get me wet."
-        mc.name "What are scared about then?"
+        mc.name "What are you scared about then?"
         the_person "I'm not nervous, I just don't know if you deserve to touch my pussy."
         if not the_person.has_taboo("touching_penis"):
             mc.name "You've had your hands wrapped around my cock, don't pretend to be some prissy choir girl."
@@ -581,12 +581,12 @@ label cousin_condomless_sex_taboo_break(the_person):
             if the_person.on_birth_control:
                 the_person "As if. That's why I'm on the pill."
                 $ the_person.update_birth_control_knowledge()
-                mc.name "So you can fuck your cousin?"
-                "She groans and rolls her eyes."
+                mc.name "That's ok, we can practice by giving you a cunt full of my cum."
+                "She bites her lips and moans."
             else:
-                the_person "You better not, or you'll be the one telling both of our moms."
+                the_person "Mmmm, getting knocked up by you would be kinda hot! You really shouldn't though. No matter how much I beg for it..."
                 mc.name "Wait, are you on the pill?"
-                the_person "Obviously not, or I wouldn't be worried."
+                the_person "Obviously not, or I wouldn't be so turned on. Look, lets just not think about that right now, just hurry up and fuck me! Fuck my fertile pussy with your bare cock!"
                 $ the_person.update_birth_control_knowledge()
 
         else:
@@ -594,31 +594,31 @@ label cousin_condomless_sex_taboo_break(the_person):
                 the_person "Me too. Fuck it, I'm on the pill so why not?"
                 $ the_person.update_birth_control_knowledge()
             else:
-                the_person "Me too, but we need to be really careful if you're going to take me bareback. I'm not on birth control."
+                the_person "Me too, but...I'm not on birth control. I'm really fertile right now..."
                 $ the_person.update_birth_control_knowledge()
                 mc.name "Fine, I'll pull out."
-            the_person "You better. If you get me prengant you're going to be the one to tell both of our moms."
-        the_person "Come on, hurry up and fuck me before I realise this is a bad idea."
+            the_person "No! I want you to cu- Nevermind! Just hurry up and fuck me!"
+        the_person "Let's not think about anything right now and just do what feels right. Come on, stick that bare cock deep in my fertile little pussy. Fuck me raw!"
 
     else:
         if the_person.has_taboo("vaginal_sex"):
-            the_person "Hell no! You're probably going to cum as soon as you're inside me."
-            mc.name "You want to feel it raw too though, right?"
-            the_person "That's not the point [the_person.mc_title], I don't want you getting me fucking pregnant!"
-            mc.name "So I'll pull out. Come on, it's our first time."
+            the_person "So you want to fuck your own cousin without a condom, huh? Whats wrong, no one else will let you?"
+            mc.name "You're one to talk, I know you've been dying to do it it raw for our first time."
+            the_person "Maybe I'm not a pervert like you [the_person.mc_title]. Maybe I'm not looking to get pregnant from my cousin, did you think of that?"
+            mc.name "Oh, I think you are, but I can pull out if you want. Come on, it's our first time."
         else:
-            the_person "Hell no! You're probably going to cum as soon as you're inside me."
-            mc.name "You want to feel it raw too though, right?"
-            the_person "That's not the point [the_person.mc_title], I don't want you getting me fucking pregnant!"
-            mc.name "So I'll pull out. Come on, we both already know where this is going."
+            the_person "So you want to fuck your own cousin without a condom, huh? Whats wrong, no one else will let you?"
+            mc.name "You're one to talk, I know you've been wondering how it feels raw too."
+            the_person "Maybe I'm not a pervert like you [the_person.mc_title]. Maybe I'm not looking to get pregnant from my cousin, did you think of that?"
+            mc.name "Oh, I think you are, but I can pull out if you want. Come on, we both already know where this is going."
         "She thinks for a long moment, then sighs and nods."
         if the_person.on_birth_control:
-            the_person "Fine... But I swear to God if you don't pull out..."
+            the_person "Fine...I'm on the pill anyway. But if we're going to do this, we might as well do it properly. Don't pull out when you get close, just shoot it all inside me."
         else:
-            the_person "Fine, but I'm not on the pill so you better be damn sure to pull out. If you don't, I swear to God..."
+            the_person "Fine, you're right, I want it too, but...I'm not on birth control. And I'm really fertile right now..."
             $ the_person.update_birth_control_knowledge()
-        mc.name "What, you'll tell your Mom that you're banging your own cousin? You might want to think of a better threat than that."
-        the_person "Ugh, whatever. Just hurry up and fuck me."
+        mc.name "Well then I can pull out...if you want me to. But I don't think you want me to pull out, do you? I think you want your cunt full of my cum inside you..."
+        the_person "Look, let's not think about anything right now and just do what feels right. Come on, stick that bare cock into my fertile little pussy. Fuck me raw!"
     return
 
 label cousin_underwear_nudity_taboo_break(the_person, the_clothing):
@@ -672,15 +672,15 @@ label cousin_bare_pussy_taboo_break(the_person, the_clothing):
 #
 label cousin_creampie_taboo_break(the_person):
     if the_person.wants_creampie():
-        the_person "Oh fuck, you actually did it. I thought you were going to chicken out."
-        mc.name "Why would I chicken out? This is the one thing your pussy is good for."
+        the_person "Oh fuck, you actually came inside me! I thought you would chicken out. It's feels so hot inside me..."
+        mc.name "Why would I chicken out? We finally found something you're good at. Taking a load of my cum in your pussy."
         if the_person.on_birth_control:
             the_person "Ugh, whatever. Congratulations, you managed to cum in a girls pussy. You aren't a complete failure of the human race."
 
         else:
-            the_person "Because I'm not on the pill, you idiot. I thought you were suppose to be the smart one in the family."
+            the_person "Because I'm not on the pill, you idiot. Oh fuck, why does that turn me on so much though? Taking your cum inside me and getting bred like the cousin-fucking little whore I am..."
             $ the_person.update_birth_control_knowledge()
-            the_person "Unless this was your plan the whole time..."
+            the_person "Whatever, I dare you to fuck me again! Don't pull out, just hold me down on your cock and cum deep in my fertile womb! Lets see if you have the balls to breed your own cousin!"
 
     else:
         if the_person.on_birth_control:
