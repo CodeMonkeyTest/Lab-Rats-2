@@ -123,7 +123,7 @@ label scene_piledriver_1(the_girl, the_location, the_object):
                     mc.name "I know you can handle it, you're a well trained little slut who knows how to take a dick."
                     "[the_girl.possessive_title] moans loudly, enjoying the combination of your dirty talk and getting fucked."
                     if the_girl.get_opinion_score("creampies") > 0 or the_girl.get_opinion_score("bareback sex") > 0:
-                        the_girl "Oh... I want to watch you cum [the_girl.mc_title]. I want to watch you unload deep inside of me. I want to feel your hot dripping out of me..."
+                        the_girl "Oh... I want to watch you cum [the_girl.mc_title]. I want your  seed in my fertile little pussy. I want to feel it leak out of my womb all day..."
 
                     elif the_girl.get_opinion_score("cum facials") > 0 or the_girl.get_opinion_score("being covered in cum") > 0:
                         the_girl "Oh... I want to watch you cum [the_girl.mc_title]. I want to watch you pull that cock out and fire your load right over my face. Paint me with it like the cum slut I am..."
@@ -246,8 +246,8 @@ label outro_piledriver(the_girl, the_location, the_object):
                     "You keep her on her back for a few more seconds, enjoying the way the position keeps your semen inside of her."
             else:
                 if not the_girl.on_birth_control or not the_person.event_triggers_dict.get("preg_knows", False):
-                    the_girl "Wait, make sure to pull out!"
-                    "It's a little late for that now. You gasp and push yourself as deep as you can, draining your balls into [the_girl.possessive_title]'s cunt."
+                    the_girl "Oh god! I'm not on birth control!"
+                    "The thought of knocking up [the_girl.title] makes you cum even harder. You gasp and push yourself as deep as you can, draining your balls into [the_girl.possessive_title]'s cunt."
                 else:
                     if the_girl.get_opinion_score("creampies") > 0:
                         the_girl  "Yes! Fill me with your cum!"

@@ -988,10 +988,10 @@ label sister_instathot_label_mom(the_sister, the_mom):
 
     mc.name "Alright, I think we've got all the shots we need."
     $ the_group.draw_person(the_mom, emotion = "happy")
-    "[the_mom.possessive_title] hops off of the bed."
-    the_mom "That was really fun, thanks for inviting me you two."
+    "[the_mom.possessive_title] hops off of the bed, walks up to you and whispers in your ear"
+    the_mom "You should slide your big stiff prick up inside her. Don't you think that would be hot? Your sister creaming all over her big brother's cock!"
     $ the_group.draw_person(the_sister, emotion = "happy")
-    the_sister "It was! Oh, I should give [the_sister.mc_title] his cut for being our photographer."
+    the_sister "Hey, what are you guys talking about? Oh, I should give [the_sister.mc_title] his cut for being our photographer."
 
     menu:
         "Take the money\n{color=#00ff00}{size=18}Income: $100{/size}{/color}":

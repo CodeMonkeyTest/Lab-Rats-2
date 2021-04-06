@@ -1080,7 +1080,7 @@ label aunt_share_drinks_label(the_person):
                                 the_person "That was great [the_person.mc_title], I feel like I'm floating."
                                 "She looks up at you and giggles."
                                 $ the_person.change_happiness(5)
-                                the_person "And making you cum felt so good, I've still got it! I'm not too old yet! Haha..."
+                                the_person "And making you cum inside me felt so good. It feels so warm and tingly inside me now. I love it! And you know, I'm still young enough for you to get me pregnant..."
                                 "She puts her head down and sighs happily."
 
                             elif the_report.get("girl orgasms",0) > 0:

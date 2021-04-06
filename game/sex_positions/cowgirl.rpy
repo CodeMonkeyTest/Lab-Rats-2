@@ -108,7 +108,7 @@ label outro_cowgirl(the_girl, the_location, the_object):
     #Perhaps an option where she hesitates and you grab her hips and pull her down while you cum.
     if the_girl.wants_creampie() or mc.condom:
         #She drops down on you as you cum.
-        the_girl "Yes! Ah!"
+        the_girl "Yes! Cum deep! I want you deep inside me!"
         "[the_girl.title] drops herself down, grinding her hips against yours and pushing your cock as deep into her as possible."
         "Her breath catches in her throat when you pulse out your hot load of cum deep inside of her."
         #the_girl "Oh my god... Give it all to me [the_girl.mc_title]... Fill me up..."
@@ -154,7 +154,7 @@ label outro_cowgirl(the_girl, the_location, the_object):
             "Pull her down and cum inside her":
                 "You reach up and grab [the_girl.possessive_title] by the hips. With one confident pull she plunges back onto your cock, gasping with pleasure."
                 "The feeling of her warm, wet pussy sliding down and engulfing your cock again pushes you over the edge. You pull [the_girl.title] tight against you and unload inside of her."
-                the_girl "Ah! Just... Just this once!"
+                the_girl "Oh god! Hold me down on your cock and cum inside me! Make me take it!"
                 $ the_girl.call_dialogue("cum_vagina")
                 $ the_girl.cum_in_vagina()
                 $ the_girl.change_obedience(3)

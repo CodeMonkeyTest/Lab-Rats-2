@@ -178,7 +178,7 @@ label lily_sex_review(the_person, the_report):
 
     # Gave creampie while she is not on birth control (extra dialog when she could get pregnant)
     if the_report.get("creampies", 0) > 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
-        the_person "Well [the_person.mc_title], you have to tell mom when I get pregnant?"
+        the_person "So [the_person.mc_title], how are going to tell mom about us when I get pregnant?"
     return
 
 label lily_greetings(the_person):
@@ -682,7 +682,7 @@ label lily_cum_pullout(the_person):
                 $ the_person.update_birth_control_knowledge()
                 "She moans happily."
             else:
-                the_person "Wait, take the condom off first! I... I want you to cum bareback!"
+                the_person "Wait, take the condom off first! I... I want you to cum bareback! I want your cum in my pussy!"
                 "She pants happily."
                 the_person "It's my fault if I get pregnant, okay? You don't need to worry, I know it would be my fault!"
 
