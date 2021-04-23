@@ -727,9 +727,9 @@ label introvert_cum_pullout(the_person):
                 "She moans deserately."
                 the_person "Come on, I need it so badly!"
             else:
-                the_person "Oh fuck... Do you want to knock me up?"
+                the_person "Oh God, I'm so fertile right now! Oh fuck! Do...do you want to knock me up!?"
                 "She seems almost desperate as asks between breathy moans."
-                the_person "You can take the condom off and cum inside me. I want you to fuck my life up and get me pregnant!"
+                the_person "Please, take the condom off and cum inside me! I want you to fuck my life up and get me pregnant! Please! I need your seed in me!"
             #TODO: Add some more varients if she has a boyfriend or something
             #TODO: Add a varient if she's related to you ("Get me pregnant with our incest baby!")
 
@@ -754,7 +754,7 @@ label introvert_cum_pullout(the_person):
                 if the_person.on_birth_control: #She just likes creampies.
                     the_person "Oh god, yes! I want you to creampie me [the_person.mc_title]! Put all of that hot cum inside me!"
                 else: #Yeah, she's not on BC and asking for you to creampie her. She's looking to get pregnant.
-                    the_person "Oh god, yes! Cum and knock me up! Aaah!"
+                    the_person "Oh god yes, breed me baby! Cum deep and knock me up! Make me a mommy!"
             elif the_person.on_birth_control: #She's on the pill, so she's probably fine
                 the_person "Yeah? Cum wherever you want, I'm on the pill. Ah!"
                 $ the_person.update_birth_control_knowledge()
@@ -801,18 +801,18 @@ label introvert_cum_vagina(the_person):
         elif the_person.effective_sluttiness() > 75 or the_person.get_opinion_score("creampies") > 0:
             if the_person.relationship != "Single":
                 $ so_title = SO_relationship_to_title(the_person.relationship)
-                the_person "Mmmm, I like having your cum inside me. Even if I have to tell my [so_title] I'm pregnant this would be worth it."
+                the_person "Mmmm yes, give me all of it! Cream my womb! Your cum belongs inside me! Fuck my [so_title], it's your seed I want. I want YOU to be the father of my child."
 
             else:
                 the_person "How easily do you think I get pregnant? Maybe I just did."
                 "She sighs happily and shrugs."
-                the_person "Whatever. I just love feeling your hot load inside me so much."
+                the_person "Whatever. I love feeling your hot load inside me too much to want to stop."
         else:
             if the_person.relationship != "Single":
                 $ so_title = SO_relationship_to_title(the_person.relationship)
                 "She sighs happily."
                 the_person "Mmm, your cum feels so nice and warm inside me. I wonder if you got me pregnant..."
-                the_person "My [so_title] wouldn't be too happy about that. Whatever, he doesn't fuck me like you do!"
+                the_person "My [so_title] wouldn't be too happy about that. Whatever, keep cumming inside me, we don't need to tell him the baby is his."
 
             else:
                 the_person "Oh... Mmm that feels so hot."
@@ -999,8 +999,8 @@ label introvert_date_seduction(the_person):
         "She holds onto your arm, stroking it gently."
         if the_person.wants_creampie() and the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") >= 0 and the_person.get_opinion_score("creampies") >= 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
             if the_person.get_opinion_score("creampies") > 0: #No condoms, loves creampies, she's basically asking you to knock her up. So... have her ask you to knock her up!
-                the_person "Do you want to come over to my place, bend me over, and put load after load inside my unprotected pussy?"
-                the_person "I think I want to get pregnant tonight."
+                the_person "I'm actually really fertile right now so...Do you want to come over to my place, bend me over, and put load after load inside my unprotected pussy?"
+                the_person "I want you to get me pregnant behind my [so_title]'s back tonight! Claim my womb before my [so_title] gets a chance! Give me your little whore a bastard for him to raise!"
             else:
                 the_person "Do you want to come over to my place and fuck me all night? No protection needed."
         elif the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") > 0:
@@ -1216,7 +1216,7 @@ label introvert_sex_review(the_person, the_report):
 
     # Gave creampie while she is not on birth control (extra dialog when she could get pregnant)
     if the_report.get("creampies", 0) > 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
-        the_person "Dammit...why did you cum inside me? I could get pregnant, you know."
+        the_person "Damn, you seem to love cumming inside me stud. You might be getting me pregnant soon, you know..."
     return
 
 ## Role Specific Section ##
@@ -1373,11 +1373,14 @@ label introvert_condomless_sex_taboo_break(the_person):
         if the_person.on_birth_control:
             the_person "I'm on birth control, so it should be fine, right? The chance of it not working is almost zero."
             $ the_person.update_birth_control_knowledge()
-        if the_person.get_opinion_score("creampies") > 0:
+        elif the_person.get_opinion_score("creampies") > 0:
             the_person "I should really tell you to pull out when you cum..."
             mc.name "{i}Are{/i} you telling me I should pull out?"
             "She bites her lip and shakes her head."
-            the_person "No, I'm not."
+            the_person "No baby, I'm not."
+            "She leans into your ear to whisper."
+            the_person "Cum deep inside me baby. Put it all inside me, don't waste a single drop!"
+            "She leans back, smiles, and gives you a wink."
         elif the_person.get_opinion_score("creampies") < 0:
             the_person "You'll need to pull out though. There's no way in hell I want you to cum inside me."
         else:
@@ -1536,14 +1539,16 @@ label introvert_creampie_taboo_break(the_person):
         elif the_person.effective_sluttiness() > 75 or the_person.get_opinion_score("creampies") > 0:
             if the_person.relationship != "Single":
                 $ so_title = SO_relationship_to_title(the_person.relationship)
-                the_person "Oh fuck, you really did it. You don't even care that I have a [so_title], or that I'm not on birth control..."
+                the_person "Oh fuck, you really did it. You didn't even care that I have a [so_title], you just put your whole load right into my unprotected pussy...and I wanted you to!"
+                the_person "I can't believe I'm saying this but...I want you to do what my [so_title] can't!
+I want to be bred! And I want YOU to breed me!"
                 $ the_person.update_birth_control_knowledge()
 
             else:
-                the_person "Oh fuck, you really did it. You just put your whole load right into my unprotected pussy..."
+                the_person "Oh fuck, you really did it. You don't even care that I'm not on birth control, you just put your whole load right into my unprotected pussy..."
                 $ the_person.update_birth_control_knowledge()
 
-            the_person "I guess now I just have to wait and see if you knocked me up. You should put a second load in me, just to be sure."
+            the_person "I'm really fertile right now, you probably just knocked me up. You should put a second load in me, just to be sure..."
         else:
             if the_person.relationship != "Single":
                 $ so_title = SO_relationship_to_title(the_person.relationship)
@@ -1551,7 +1556,7 @@ label introvert_creampie_taboo_break(the_person):
                 the_person "Fuck... I hope you didn't get me pregnant. That would be hard to explain to my [so_title]."
 
             else:
-                the_person "Oh fuck... I really should have told you to pull out. It feels good to have your cum inside me though."
+                the_person "Oh fuck... I really should have told you to pull out. It feels too good to have your cum inside me though."
                 the_person "I just hope you didn't get me pregnant."
 
     else:

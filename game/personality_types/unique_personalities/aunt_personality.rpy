@@ -19,10 +19,10 @@ init 1300:
 
 
             if the_person.love > 40 and the_person.sluttiness > 60:
-                valid_titles.append("Your personal MILF")
+                valid_titles.append("Your baby mother")
 
             if the_person.sluttiness > 100:
-                valid_titles.append("Your cock hungry aunt")
+                valid_titles.append("Your breeding bitch")
                 valid_titles.append("Your cumdump aunt")
 
             return valid_titles
@@ -166,7 +166,7 @@ label aunt_sex_review(the_person, the_report):
 
     # Gave creampie while she is not on birth control (extra dialog when she could get pregnant)
     if the_report.get("creampies", 0) > 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
-        the_person "And how am I going to explain to my sister when you got me pregnant?"
+        the_person "At this rate, your cousin is going to have a new brother or sister soon. I can't wait..."
     return
 
 label aunt_flirt_response_low(the_person):
@@ -300,14 +300,14 @@ label aunt_cum_pullout(the_person):
                 "She moans happily."
                 the_person "You've already gotten me pregnant [the_person.mc_title]. Do you want to take that condom off and cum in me again?"
             elif the_person.on_birth_control:
-                the_person "I... I shouldn't say this, but just this once do you want to take the condom off and..."
+                the_person "Take off that stupid condom and cum inside me. Put your cum into my womb, where it belongs!"
                 "She moans desperately."
-                the_person "Cum inside of me? I'm on the pill, and it would feel so good!"
+                the_person "I'm still on the pill for now, but we can pretend you're getting me pregnant!"
                 $ the_person.update_birth_control_knowledge()
             else:
-                the_person "Oh fuck... Do you want to take the condom off?"
+                the_person "Take off that stupid condom and cum inside me. Put your seed into my womb, where it belongs!"
                 "She moans desperately."
-                the_person "I don't even care if you get me pregnant, I just want to feel all of your cum inside of me!"
+                the_person "I'm so fertile right now and so ready to make us a baby! I just need your cum! Come on, breed your aunt!"
 
             menu: #TODO: Add a varient of this normally so you can stealth a girl (don't do that in real life, it's super fucked up).
                 "Take off the condom.":
@@ -322,9 +322,9 @@ label aunt_cum_pullout(the_person):
     else:
         if the_person.wants_creampie():
             if the_person.on_birth_control or the_person.event_triggers_dict.get("preg_knows", False):
-                the_person "Cum for me [the_person.mc_title]! Cum wherever you want!"
+                the_person "Cum for me [the_person.mc_title]! Cum deep in my pussy!"
             else:
-                the_person "I want it! Cum inside me!"
+                the_person "Yes! Give it to me! I'm not on birth control, so now's your best chance to get me pregnant! Seed my womb and knock up your slutty aunt! I want your baby!"
         else:
             if the_person.on_birth_control:
                 the_person "Oh! Pull out, you can cum wherever else you want!"
@@ -342,7 +342,7 @@ label aunt_cum_condom(the_person):
         the_person "My sister wouldn't be very happy about that."
         mc.name "What about you? Would you be happy?"
         "[the_person.possessive_title] stammers for a moment."
-        the_person "I... I mean, we shouldn't. We can't, you know? This was nice though."
+        the_person "I...I mean, I'd enjoy that more than I like to admit but we really shouldn't...I guess...I mean no,  we can't. It {i}is{/i} really hot to think about though..."
 
     else:
         the_person "Oh wow, good job [the_person.mc_title]. I like having you cum inside me, even if you have to wear a condom to do it."
@@ -357,10 +357,10 @@ label aunt_cum_vagina(the_person):
             the_person "You know just how to make me feel like a young woman again."
 
         else:
-            the_person "Oh god, that feels so good..."
-            "She sighs happily."
-            the_person "You should try and pull out though, next time we do it."
-            the_person "If you keep cumming inside me when I'm not on my birth control you're going to get me pregnant."
+            the_person "Oh YES! Cum in me! Shoot it right up inside my womb where it belongs! Breed your aunt, lover!"
+            "She plants kisses all over your face as she presses her hips tight against yours."
+            the_person "That's it, pump it all inside me. I love it when you cum inside me like this! It feels like you're making my womb yours and I love it!"
+            the_person "Mmm, keep shooting in me. Knock me up and make me yours baby! I want to be your slutty, pregnant aunt!"
             $ the_person.update_birth_control_knowledge()
 
     else:
@@ -601,20 +601,20 @@ label aunt_anal_sex_taboo_break(the_person):
     return
 
 label aunt_condomless_sex_taboo_break(the_person):
-    the_person "You need to wear a condom [the_person.mc_title]. What if you get a little too excited?"
-    the_person "I might be older than you, but you could still get me pregnant."
+    the_person "Oh, fuck yes [the_person.mc_title]! I can't believe I'm saying this, but I want you to fuck me bareback!"
+    the_person "I want your bare cock in my unprotected cunt and I want all your sperm deep in my womb."
     if the_person.has_taboo("vaginal_sex"):
-        mc.name "Don't you want our first time to be special? I promise I'll pull out."
+        mc.name "Yeah? You want to take my cum inside you for our first time? Do you like the idea of getting knocked up by your nephew?"
     else:
-        mc.name "Don't you trust me by now? I promise I'll pull out."
+        mc.name "I had no intention of pulling out anyway. I've always wanted to fill your pussy with my cum."
 
     if the_person.on_birth_control:
-        the_person "Well... Okay, but only because I'm on birth control. You should still be careful and try and pull out."
+        the_person "Yes baby, do it! I'm on birth control, but I want you to pretend like you're getting me pregnant. I've been thinking about it a lot lately and it really turns me on!"
         $ the_person.update_birth_control_knowledge()
     else:
-        the_person "Well... Okay, but I'm not on any birth control right now so you'll need to be very careful."
+        the_person "Fuck yes! I'm not on any birth control right now, so take your best shot. Knock me up, newphew! Make yourself a little cousin in my womb!"
         $ the_person.update_birth_control_knowledge()
-    mc.name "I will be. Thank you [the_person.title]."
+    mc.name "I'm going to fill your pussy with so much cum you'll have twins!"
     return
 
 label aunt_underwear_nudity_taboo_break(the_person, the_clothing):
@@ -665,23 +665,24 @@ label aunt_bare_pussy_taboo_break(the_person, the_clothing):
 #     return
 #
 label aunt_creampie_taboo_break(the_person):
-    the_person "Oh my god, did you just..."
-    "[the_person.possessive_title] gasps, then is silent for a moment."
+    the_person "Oh my god, you just came so much inside me..."
+    "[the_person.possessive_title] moans, her eyes full of lust."
     if the_person.wants_creampie():
-        the_person "It's not your fault, I know I said I wanted it. I got so carried away that I wasn't thinking straight."
-        mc.name "That means you had a good time, right? So what's the problem?"
+        the_person "Don't worry, I wanted it. I needed to feel your cum inside me. Deep in your aunt's womb, right where it belongs."
+        mc.name "Was that your plan all along? To make sure we get all of your nephews hot cum inside this fertile little pussy?"
         if the_person.on_birth_control:
-            the_person "I... I'm your aunt! My sister would be so disappointed in me if she knew I was fucking her son behind her back!"
-            the_person "I don't know what's happens to me, I just lose my mind and want even more!"
+            the_person "I-I...FUCK! I can't lie anymore, I want my nephews baby! Tell me! Tell me you want to get me pregnant! Tell me to stop my birth control!"
+            the_person "I'll fucking do it! Tell me you want to knock me up and I'll spread my legs for you and let you breed me, whenever you want!"
 
         else:
-            the_person "I'm your aunt, and I'm not even on birth control! What happens if I got pregnant? What would we tell my sister?"
+            the_person "I'm your aunt, and I'm not even on birth control! Oh fuck, why is that so hot?"
             $ the_person.update_birth_control_knowledge()
-            the_person "I don't know what's happens to me, I just lose my mind and want even more!"
-        mc.name "Trust your body, what is it telling you?"
-        the_person "...That I love you, and I love this."
-        mc.name "Then that's all that matters. We'll worry about my mom later, alright."
-        the_person "Okay, I trust you [the_person.mc_title]."
+            the_person "I don't know what's happened to me, I just want even more!"
+        mc.name "And I want to give you more. I want to get you pregnant. I want to keep cumming inside you and make you mine! My slutty. Pregnant. Aunt."
+        the_person "Oh fuck! Do it, knock up your aunt! Make me {b}your{/b} slut! Your pregnant little whore for you to fuck whenever you want!"
+        the_person "Keep filling my pussy with your cum until I'm pregnant! Let's make your cousin a little sibling!
+        mc.name "Fuck yes! Is that what you are? Are you my slut? Are you going to take my seed like a good slut?"
+        the_person "YES! I'm your slut! Fuck your slut again [the_person.mc_title], right now! I want you to breed my pussy again and again! Let's make sure I get pregnant!"
 
 
     else:

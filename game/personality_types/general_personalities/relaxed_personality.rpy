@@ -794,7 +794,7 @@ label relaxed_cum_pullout(the_person):
                 the_person "Oh god... I can't resist it!"
                 the_person "I want you to cum in my pussy [the_person.mc_title]!"
                 "She seems almost desperate as she moans."
-                the_person "I don't care if you knock me up! I'm just your... breeding slut!"
+                the_person "I don't care if you knock me up! I'm just your...your little breeding slut!"
 
             menu: #TODO: Add a varient of this normally so you can stealth a girl (don't do that in real life, it's super fucked up).
                 "Take off the condom.":
@@ -813,14 +813,14 @@ label relaxed_cum_pullout(the_person):
             elif the_person.get_opinion_score("creampies") > 0:
                 "[the_person.possessive_title] moans happily."
                 if the_person.on_birth_control: #She just likes creampies.
-                    the_person "Yes! Cum inside me [the_person.mc_title]! Fill me up with your hot load!"
+                    the_person "Yes! Cum deep inside me [the_person.mc_title]! Fill me up with your hot load!"
                 else: #Yeah, she's not on BC and asking for you to creampie her. She's looking to get pregnant.
                     the_person "Yes! Cum inside me and knock me up! Breed me like the slut I am!"
             elif the_person.on_birth_control: #She's on the pill, so she's probably fine
                 the_person "I'm on the pill, cum wherever you want [the_person.mc_title]!"
                 $ the_person.update_birth_control_knowledge()
             else: #Too distracted to care about getting pregnant or not. Oh well, what could go wrong?
-                the_person "Ah! Do it!"
+                the_person "Ah, do it! Cum deep! Make me take it!"
         else:
             if not the_person.on_birth_control: #You need to pull out, I'm not on the pill!
                 the_person "Please pull out! I don't want to get pregnant!"
@@ -855,7 +855,7 @@ label relaxed_cum_vagina(the_person):
                 $ so_title = SO_relationship_to_title(the_person.relationship)
                 the_person "Mmmm, it's so warm."
                 "She sighs happily as you cum inside her."
-                the_person "I feel bad for my [so_title], he never makes me feel this good."
+                the_person "I feel bad for my [so_title], but he never makes me feel this good."
             else:
                 the_person "Oh fuck, it's so warm. I can feel it inside me..."
                 "She sighs happily as you cum inside her."
@@ -1290,7 +1290,7 @@ label relaxed_sex_review(the_person, the_report):
 
     # Gave creampie while she is not on birth control (extra dialog when she could get pregnant)
     if the_report.get("creampies", 0) > 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
-        the_person "Oh my...you know that you could get me pregnant, right?"
+        the_person "Oh my god, it's such a turn on having you fill me when I'm not on birth control! From now on, I want you cumming inside me every time!"
     return
 
 ## Role Specific Section ##
@@ -1463,7 +1463,9 @@ label relaxed_condomless_sex_taboo_break(the_person):
             $ the_person.update_birth_control_knowledge()
             mc.name "Do you feel smart today?"
             "She bites her lip and shakes her head."
-            the_person "No, not particularly."
+            the_person "Just think with your cock, not your head baby."
+            "She kisses your neck and rubs her body against you."
+            the_person "I want you to do something real dumb inside me...real deep. I want it so bad..."
         elif the_person.get_opinion_score("creampies") < 0:
             the_person "You'll need to pull out though. The last thing in the world I want is to get knocked up."
         else:

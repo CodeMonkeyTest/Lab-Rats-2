@@ -752,7 +752,7 @@ label bimbo_cum_pullout(the_person):
             if the_person.on_birth_control: #She just likes creampies.
                 the_person "Cum inside me [the_person.mc_title]! Cum inside my slutty pussy!"
             else: #Yeah, she's not on BC and asking for you to creampie her. She's looking to get pregnant.
-                the_person "Oh my god, yes! Cum inside me [the_person.mc_title]! Knock me up!"
+                the_person "Oh my god, yes! Cum inside me [the_person.mc_title]! Knock me up! Make me your pregnant little slut!"
         elif the_person.on_birth_control: #She's on the pill, so she's probably fine
             the_person "I think I took my pill this morning, so you can cum inside me!"
             $ the_person.update_birth_control_knowledge()
@@ -805,9 +805,9 @@ label bimbo_cum_vagina(the_person):
         elif the_person.effective_sluttiness() > 75 or the_person.get_opinion_score("creampies") > 0:
             if the_person.relationship != "Single":
                 $ so_title = SO_relationship_to_title(the_person.relationship)
-                the_person "Mmm, I love having all your cum inside me. That might make me pregnant, right?"
-                "She thinks about this for a second, then shrugs."
-                the_person "Oh well, my [so_title] will just take care of it, so that doesn't matter!"
+                the_person "Mmm, I love having all your cum inside me. I really hope you get me pregnant!"
+                "She thinks about this for a second and starts playing with herself."
+                the_person "I can make my [so_title] take care of it, while you keep fucking your babies into me. I could be a cheating slut for you to breed, over and over!"
             else:
                 the_person "Mmm, I love having all your cum inside me. That might make me pregnant, right?"
                 "She thinks about this for a second, then shrugs."
@@ -989,11 +989,11 @@ label bimbo_date_seduction(the_person):
         # the_person "Hey, that was such a great time. So I was thinking..."
         if the_person.effective_sluttiness(["vaginal_sex", "condomless_sex"]) > 60 and the_person.wants_creampie() and the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") >= 0 and the_person.get_opinion_score("creampies") >= 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
             if the_person.get_opinion_score("creampies") > 0: #No condoms, loves creampies, she's basically asking you to knock her up. So... have her ask you to knock her up!
-                the_person "Come home with me! We can fuck, and if I'm lucky you'll get me pregnant!"
+                the_person "Come home with me! I can bounce on your dick till you cum inside me! If we're lucky you might even get me pregnant!"
                 the_person "I think I'd look {i}so hot{/i} with big MILF tits. Don't you think so?"
             else:
                 the_person "Come home with me! I can bounce on your dick, and if you want you can even cum inside of me!"
-                the_person "It would be a little risky, but it's totally worth it for you!"
+                the_person "It would be a little risky, but the risk just makes it hotter!"
         elif the_person.effective_sluttiness(["vaginal_sex", "condomless_sex"]) > 60 and the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") > 0:
             the_person "Come home with me! I'll bounce on your big dick, and we won't need any condoms!"
             the_person "Bareback feels, like, so much better!"
@@ -1016,15 +1016,15 @@ label bimbo_date_seduction(the_person):
             the_person "I'll do whatever you want, okay? Just... don't leave yet."
     elif the_person.has_role(affair_role):
         $ so_title = SO_relationship_to_title(the_person.relationship)
-        the_person "So my [so_title] said he was going to be working for, like, the entire knight."
+        the_person "So my [so_title] said he was going to be working for, like, the entire night."
         "She grabs your hands and looks eagerly into your eyes, practically vibrating with excitement."
         if the_person.wants_creampie() and the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") >= 0 and the_person.get_opinion_score("creampies") >= 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
             if the_person.get_opinion_score("creampies") > 0: #No condoms, loves creampies, she's basically asking you to knock her up. So... have her ask you to knock her up!
-                the_person "Come home with me! Please? I'll bounce on your dick all night, and you can even get me pregnant if you want!"
-                the_person "Doesn't that sound fun?"
+                the_person "Come home with me! Please? I'll bounce on your dick all night and make you cum inside me! If we're lucky you'll even get me pregnant!"
+                the_person "Taking your cum in my womb is, like, the best feeling and you'll get to knock me up before my [so_title] does! Doesn't that sound hot?"
             else:
                 the_person "Come home with me! Please? I'll bounce on your dick all night long and you can cum right inside of me!"
-                the_person "Doesn't that sound fun? Having your cum in my pussy is, like, the best feeling!"
+                the_person "Doesn't that sound fun? It would be a little risky, but having your cum in my pussy is, like, the best feeling ever!"
 
         elif the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") > 0:
             the_person "Come home with me! Please? I'll bounce on your big fat dick all night long!"
@@ -1043,7 +1043,7 @@ label bimbo_date_seduction(the_person):
             the_person "Come home with me! Please? I can give you the greatest tit fuck ever, for like the entire night."
         elif the_person.get_opinion_score("cheating on men") > 0:
             the_person "Come home with me! My [so_title] is a pencil dick dweeb and I need someone to fuck me properly."
-            the_person "I'll do whatever you want, I just want to be your good little slut!"
+            the_person "Please? I'll do whatever you want, I just want to spread my legs for you and have you turn me into your good little slut!"
         else:
             the_person "Come home with me! I don't want to spend the whole night alone. I can think of, like, a ton of things for us to do together."
     elif the_person.relationship == "Single":
@@ -1237,7 +1237,7 @@ label bimbo_sex_review(the_person, the_report):
 
     # Gave creampie while she is not on birth control (extra dialog when she could get pregnant)
     if the_report.get("creampies", 0) > 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
-        the_person "You know, I could be like, pregnant here."
+        the_person "OMG like, I totally want you to get me pregnant now!"
     return
 
 label bimbo_sex_take_control(the_person):
@@ -1334,23 +1334,23 @@ label bimbo_creampie_taboo_break(the_person):
         elif the_person.effective_sluttiness() > 75 or the_person.get_opinion_score("creampies") > 0:
             if the_person.relationship != "Single":
                 $ so_title = SO_relationship_to_title(the_person.relationship)
-                the_person "Like, oh my god, your cum feel so good in me! It's driving me insane!"
-                "She squeals happily."
-                the_person "I should have dumped my [so_title] ages ago and let you fuck me more!"
+                the_person "Like, oh my god, I love cheating on my [so_title] with you! Your cum feel so good in me it's driving me crazy! Give me more!"
+                "She kisses you happily."
+                the_person "Cum in me more! I want you to cum inside me till I get pregnant! I want you to steal me from my [so_title]! Knock me up and make me yours!"
 
             else:
-                the_person "Like, oh my god, your cum feel so good in me! It's driving me insane!"
+                the_person "Like, oh my god, I love taking your cum in my fertile little womb! Cum inside me till I get pregnant!"
                 "She squeals happily."
 
         else:
             if the_person.relationship != "Single":
                 $ so_title = girl_relationship_to_title(the_person.relationship)
-                the_person "Oh my god, I'm like, such a terrible [so_title]!"
+                the_person "Oh my god, I'm like, such a naughty slut! I really shouldn't cheat on my [so_title] and let you cum inside me!"
                 "She sighs happily."
-                the_person "This feels so good though... I want you to do it again, even if I get pregnant!"
+                the_person "This feels so good though... I want you to do it again, even if I get pregnant! Get me pregnant baby!"
 
             else:
-                the_person "Oh my god, your cum feels so good! I think my body wants you to get me pregnant!"
+                the_person "Your cum feels so good! I think my body wants me to get pregnant! I think I want you to give me your babies!"
                 "She squeals happily."
 
     else:

@@ -74,7 +74,7 @@ label scene_missionary_1(the_girl, the_location, the_object):
                 the_girl "Then do it. Pin me against the [the_object.name] and fuck me all you want."
                 "She wraps her legs around your waist and pulls you deep inside of her. The tight, warm feeling of her cunt makes your cock twitch."
                 if the_girl.get_opinion_score("creampies") > 0:
-                    the_girl "You can cum anywhere you want. You can pump your load right into me if that's what you want. If that's what would make you happy..."
+                    the_girl "Do you want to cum inside me? You can pump your load right into me if that's what you want. I'd love to take all of your hot cum, inside my tight little pussy..."
                 else:
                     the_girl "You can use me however you want [the_girl.mc_title], I'll be your obedient fuck toy, if that's what you want me to be..."
                 "She moans into your ear and trembles beneath you."
@@ -176,7 +176,7 @@ label scene_missionary_2(the_girl, the_location, the_object):
                     "She tests your grip on her hands and shivers with pleasure when you force them back down and keep her in place. You can hear her talking softly to herself."
                     the_girl "I'm just a fuck toy to you right now... Just a soft wet hole for you to fuck with that big cock... Ah!"
                     if the_girl.get_opinion_score("bareback sex") > 0:
-                        the_girl "You could fuck me until you cum inside. You might get me pregnant and all I can do is sit here and get fucked like a slut... Oh my god..."
+                        the_girl "You're going to fuck me until you cum inside me. Oh my god, you're going to get me pregnant! You're going to fuck a baby into me and all I can do is lay here and get fucked like a slut... Oh my god..."
                     elif the_girl.get_opinion_score("creampies") > 0:
                         the_girl "You could cum right inside me and there's nothing I could do to stop you... You would just fuck me full of your cum!"
                     "[the_girl.title]'s pussy feels great to fuck, but you can't keep this pace up forever. You let go of her hands and slow down."

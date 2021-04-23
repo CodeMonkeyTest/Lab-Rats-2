@@ -661,7 +661,7 @@ label wild_flirt_response_affair(the_person):
         else: #She's shy or nervous about being discovered
             "[the_person.possessive_title] laughs, then shakes her head and glances around."
             the_person "You're looking pretty hot too, but you need to be a little more subtle."
-            the_person "I don't any rumours getting back to my [so_title]. That would really throw a wrench into our little affair..."
+            the_person "I don't any rumours getting back to my [so_title]. Then who will look after all the babies you're going to put in me..."
             "After checking again that nobody else is watching she reaches over and cups your crotch, massaging the bulge through your pants."
             the_person "Just be patient. I'll be all over this dick soon enough."
             mc.name "Alright, I think I can contain myself a little while longer."
@@ -765,7 +765,7 @@ label wild_cum_pullout(the_person):
                 the_person "I can't... I can't think straight!"
                 "She moans desperately."
                 the_person "Fuck it! Take the condom off and cum inside of me [the_person.mc_title]!"
-                the_person "I want you to get me pregnant and fuck my life up!"
+                the_person "I want you to fuck my life up and get me pregnant! Cum inside me and make me your whore!"
             menu: #TODO: Add a varient of this normally so you can stealth a girl (don't do that in real life, it's super fucked up).
                 "Take off the condom.":
                     "You don't have much time to spare. You pull out, barely clearing her pussy, and pull the condom off as quickly as you can manage."
@@ -784,7 +784,7 @@ label wild_cum_pullout(the_person):
                 if the_person.on_birth_control: #She just likes creampies.
                     the_person "Fuck yeah, fill me up with your cum [the_person.mc_title]! Creampie me!"
                 else: #Yeah, she's not on BC and asking for you to creampie her. She's looking to get pregnant.
-                    the_person "Oh fuck, cum inside me and knock me up [the_person.mc_title]! I want you to breed me like a slut!"
+                    the_person "Fuck yes, cum in my pussy [the_person.mc_title]! Breed me like a slut! I want your cum to knock me up!"
             elif the_person.on_birth_control: #She's on the pill, so she's probably fine
                 the_person "Cum wherever you want [the_person.mc_title], I'm on the pill!"
                 $ the_person.update_birth_control_knowledge()
@@ -818,7 +818,7 @@ label wild_cum_vagina(the_person):
 
     if the_person.wants_creampie():
         if the_person.event_triggers_dict.get("preg_knows", False):
-            the_person "It's no wonder I got knocked up, I just love feeling your cum inside me so much!"
+            the_person "It's no wonder I got knocked up. It's like whenever your cock is inside me, my womb just goes crazy for your cum!"
 
         elif the_person.on_birth_control:
             if the_person.relationship != "Single":
@@ -834,7 +834,7 @@ label wild_cum_vagina(the_person):
         elif the_person.effective_sluttiness() > 75 or the_person.get_opinion_score("creampies") > 0:
             if the_person.relationship != "Single":
                 $ so_title = SO_relationship_to_title(the_person.relationship)
-                the_person "Fuck yes, pump that cum into me! I don't care if I get pregnant, I'll just tell my [so_title] that it's his!"
+                the_person "God yes! Fill my womb with your baby batter and make me yours! Send me home to my [so_title] pregnant! Show him I'm your woman!"
 
             else:
                 the_person "Mmm, give me that baby batter, pump my pussy full of it! I'll worry about being pregnant later!"
@@ -1013,10 +1013,10 @@ label wild_date_seduction(the_person):
         if the_person.effective_sluttiness(["vaginal_sex", "condomless_sex"]) > 60 and the_person.wants_creampie() and the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") >= 0 and the_person.get_opinion_score("creampies") >= 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
             if the_person.get_opinion_score("creampies") > 0: #No condoms, loves creampies, she's basically asking you to knock her up. So... have her ask you to knock her up!
                 the_person "Let's go back to my place and fuck until you knock me up."
-                the_person "Don't you think I'd look good with huge mommy-tits? You can make it happen."
+                the_person "Don't you think I'd look good with huge mommy-tits? You can make it happen tonight..."
             else:
                 the_person "Let's go back to my place, I want you to throw me on the bed and fuck me bareback."
-                the_person "You can even cum inside me if you want. I just want you to fuck me up with your cock."
+                the_person "You can even cum inside me if you want. I just want you to fuck me up with your bare cock."
         elif the_person.effective_sluttiness(["vaginal_sex", "condomless_sex"]) > 60 and the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") > 0:
             the_person "Let's go back to my place. You can fuck me any way you want, as long as you follow my one simple rule: No condoms."
             the_person "It feels so much better getting fucked bareback, I just can't do it any other way!"
@@ -1042,12 +1042,12 @@ label wild_date_seduction(the_person):
 
     elif the_person.has_role(affair_role):
         $ so_title = SO_relationship_to_title(the_person.relationship)
-        the_person "So my [so_title] won't be home tonight, I was thinking..."
+        the_person "So, I made sure my [so_title] won't be home tonight and I was thinking..."
         "She reaches down and cups your crotch, rubbing it gently through your pants."
         if the_person.wants_creampie() and the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") >= 0 and the_person.get_opinion_score("creampies") >= 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
             if the_person.get_opinion_score("creampies") > 0: #No condoms, loves creampies, she's basically asking you to knock her up. So... have her ask you to knock her up!
                 the_person "Let's go back to my place so you can pin me to the bed and creampie me all night long."
-                the_person "All that cum in my unprotected pussy and I'm sure to get knocked up. Just thinking about it is making me wet!"
+                the_person "With all your cum in my unprotected pussy, I'm sure to get knocked up. Just thinking about it is making me wet!"
             else:
                 the_person "Let's go back to my place. You can pin me to the bed and fuck me bareback all night long."
                 the_person "Cum inside me, over my face, whatever. I just want you to fuck me up with your cock."
@@ -1070,8 +1070,8 @@ label wild_date_seduction(the_person):
             the_person "Let's go back to my place so I can wrap these big fucking tits around your big fucking cock."
             the_person "Then I'll fuck that thing until you explode. Sound like fun?"
         elif the_person.get_opinion_score("cheating on men") > 0:
-            the_person "Let's go back to my place, and you can do all the fucked up things I tell my husband I hate."
-            the_person "He tries to treat me like a lady, but all I want to be is your cock drunk slut."
+            the_person "Let's go back to my place so you can fuck me like a slut! I'll let you do all the fucked up things I tell my [so_title] I hate."
+            the_person "My [so_title] tries to treat me like a lady, but all I want is to be your cheating, cock hungry little slut."
         else:
             the_person "Let's go back to my place and make him really regret leaving me alone for the night."
     elif the_person.relationship == "Single":
@@ -1258,7 +1258,7 @@ label wild_sex_review(the_person, the_report):
 
     # Gave creampie while she is not on birth control (extra dialog when she could get pregnant)
     if the_report.get("creampies", 0) > 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
-        the_person "Oh baby, you are a mad dog, you must really want to see me pregnant."
+        the_person "Oh baby, you were like a wild animal! You must really want to see me pregnant."
     return
 
 ## Role Specific Section ##
@@ -1450,7 +1450,7 @@ label wild_condomless_sex_taboo_break(the_person):
             the_person "Well fuck it, if we're doing this I want you to go the whole nine yards and finish inside of me."
             mc.name "Are you on the pill?"
             "She shakes her head."
-            the_person "Of course not. If we're fucking raw I want you to be trying to get me knocked up every single time."
+            the_person "Of course not. If we're fucking raw I want you to be trying to get me knocked up every single time, so make sure you finish deep!"
             $ the_person.update_birth_control_knowledge()
         elif the_person.get_opinion_score("creampies") < 0:
             the_person "I guess if I can't trust you I can't trust anyone. You make me make terrible decisions, you know that?"
@@ -1602,12 +1602,13 @@ label wild_creampie_taboo_break(the_person):
         elif the_person.effective_sluttiness() > 75 or the_person.get_opinion_score("creampies") > 0:
             if the_person.relationship != "Single":
                 $ so_title = girl_relationship_to_title(the_person.relationship)
-                the_person "Oh god, I've wanted a good creampie for so long!"
-                the_person "I'm a terrible [so_title], but I really just want a man to fuck me, cum in me, and knock me up!"
+                the_person "Oh god, I've wanted a good creampie for so long! I'm a terrible [so_title], but I've never let him cum inside me. I wanted a real man to be the one to cum in my fertile pussy and claim me!"
+                the_person "I'm yours now baby! I'm his [so_title] but I'm {b}your{/b} slut! Your cheating little whore!
+                the_person "I'll spread my legs for you whenever you want, as long as you promise to breed me! I want to give birth to lots of your children."
 
             else:
                 the_person "Oh god, I've wanted a good creampie for so long!"
-                the_person "I've finally found a man to fuck me, cum in me, and knock me up!"
+                the_person "I've finally found a  real man to fuck me, cum in me, and knock me up! Do it baby, make me your pregnant slut!"
 
             "She sighs happily."
             the_person "How long until you're ready for round two? I want as much of your cum inside my pussy as possible."

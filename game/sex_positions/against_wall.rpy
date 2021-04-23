@@ -147,7 +147,7 @@ label scene_against_wall_2(the_girl, the_location, the_object):
                     if the_girl.sex_skills["Vaginal"] > 2:
                         "[the_girl.title] rocks her hips in time with yours to let you get as deep as possible."
                         if the_girl.get_opinion_score("creampies") > 0 or the_girl.get_opinion_score("bareback sex") > 0:
-                            the_girl "That's it, fuck me hard you stud. Fuck me and pump then that hot load inside of me!"
+                            the_girl "That's it, fuck me hard you stud. Fuck me and then pump that hot load inside of me! Claim me with your seed!"
 
                     else:
                         the_girl "Oh my god! [the_girl.mc_title], you feel so... Oh my god!"
@@ -170,7 +170,7 @@ label scene_against_wall_2(the_girl, the_location, the_object):
                     mc.name "Do you want me to keep fucking you?"
 
                     if the_girl.get_opinion_score("bareback sex") > 0:
-                        the_girl "Uh huh! Fuck me until you cum in me! Fuck me like you want to get me pregnant!"
+                        the_girl "Uh huh! Fuck me until you cum in me! Knock me up right against this [the_object.name]! I want you to get me pregnant!"
 
                     elif the_girl.get_opinion_score("creampies") > 0:
                         the_girl "Uh huh! I want you to fuck me until you cum. Pin me against the [the_object.name] and pump your load into me! I want so badly!"
@@ -218,8 +218,8 @@ label scene_against_wall_3(the_girl, the_location, the_object):
                     the_girl "Mmm, it's nice to get you so deep inside of me..."
                     if the_girl.get_opinion_score("creampies") > 0:
                         the_girl "Do you think I'll be able to make you cum? I'd love to make you cum inside me."
-                        "She pauses for a moment and trembles, then starts fucking you again."
-                        the_girl "Oh yeah, I want your hot load deep inside of me! I want to feel your dick twitch when I make you climax!"
+                        "She pauses for a moment and shivers, then starts fucking you again."
+                        the_girl "Oh yeah, I want your hot load deep inside of me! I want to feel your dick twitch when I make you climax! Give me all of your cum!"
 
                 else:
                     "[the_girl.possessive_title] slows down for a second."
