@@ -56,7 +56,7 @@ init -2 python:
 
     def insta_dm_cleanup(the_person): #Resets all the appropriate flags that should be reset after a response has been given.
         the_person.event_triggers_dict["insta_special_request_pending"] = False
-        if the_person.event_triggers_dict.get("insta_special_request_sis", None) is not None:
+        if the_person.event_triggers_dict.get("insta_special_request_sis", None):
             the_person.event_triggers_dict["insta_special_request_sis"] = None
         return
 
@@ -138,33 +138,38 @@ label view_insta(the_person):
     if the_person.event_triggers_dict.get("insta_generate_pic", False):
         "It looks like [the_person.title] has posted a new picture today, along with a comment overlaid at the bottom."
         $ posted_today = True
-        if the_person.event_triggers_dict.get("insta_special_request_outfit", None) is not None:
-            $ the_person.apply_outfit(the_person.event_triggers_dict.get("insta_special_request_outfit"))
-            $ rand_num = renpy.random.randint(0,3)
-            if rand_num == 0:
+        if the_person.event_triggers_dict.get("insta_special_request_outfit", None):
+            $ the_person.apply_outfit(the_person.event_triggers_dict.get("insta_special_request_outfit", insta_wardrobe.pick_random_outfit()))
+            $ ran_num = renpy.random.randint(0,3)
+            if ran_num == 0:
                 $ the_person.draw_person(the_animation = None)
-            elif rand_num == 1:
+            elif ran_num == 1:
                 $ the_person.draw_person(position = "kneeling1", the_animation = None)
-            elif rand_num == 2:
+            elif ran_num == 2:
                 $ the_person.draw_person(position = "back_peek", the_animation = None)
+            $ mc.change_locked_clarity(10)
             the_person "Wearing something special today: a design sent in by a fan!" (what_style = "text_message_style")
             $ the_person.event_triggers_dict["insta_special_request_outfit"] = None
 
         elif the_person.effective_sluttiness() + the_person.get_opinion_score("showing her ass")*5 + the_person.get_opinion_score("showing her tits")*5 > 20: #TODO: Decide what slut_requirement should be.
             $ skimpy_outfit = insta_wardrobe.pick_random_outfit()
             $ the_person.apply_outfit(skimpy_outfit)
-            $ rand_num = renpy.random.randint(0,3)
-            if rand_num == 0:
+            $ ran_num = renpy.random.randint(0,3)
+            if ran_num == 0:
                 $ the_person.draw_person(position = "stand3", the_animation = None)
+                $ mc.change_locked_clarity(5)
                 the_person "Thought this outfit looked sexy. What do you think?" (what_style = "text_message_style")
-            elif rand_num == 1:
+            elif ran_num == 1:
                 $ the_person.draw_person(position = "kneeling1", the_animation = None)
+                $ mc.change_locked_clarity(10)
                 the_person "Hey everyone, what do you think of this pose? I think it makes my tits look great!" (what_style = "text_message_style")
-            elif rand_num == 2:
+            elif ran_num == 2:
                 $ the_person.draw_person(position = "back_peek", the_animation = None)
+                $ mc.change_locked_clarity(5)
                 the_person "Ass was looking great, just had to take a pic!" (what_style = "text_message_style")
-            elif rand_num == 3:
+            elif ran_num == 3:
                 $ the_person.draw_person(position = "kneeling1", the_animation = None)
+                $ mc.change_locked_clarity(10)
                 the_person "Do I look good down on my knees?" (what_style = "text_message_style")
 
             if the_person.has_role(dikdok_role) and the_person.event_triggers_dict.get("dikdok_generate_video", False):
@@ -172,27 +177,29 @@ label view_insta(the_person):
                 $ the_person.event_triggers_dict["dikdok_known"] = True
 
             elif the_person.has_role(onlyfans_role) and the_person.event_triggers_dict.get("instafans_generate_content", False):
-                the_person "If you like that, subscribe to my OnlyFanatics and see so, sooo much more!" (what_style = "text_message_style")
+                the_person "If you like that, subscribe to my OnlyFanatics and see soooo much more!" (what_style = "text_message_style")
                 $ the_person.event_triggers_dict["onlyfans_known"] = True
 
             $ the_person.apply_outfit() # Reset them to their normal daily wear.
         elif the_person.is_wearing_uniform() and not (the_person.outfit.vagina_visible() or the_person.outfit.tits_visible()):
-            $ rand_num = renpy.random.randint(0,1)
-            if rand_num == 0:
+            $ ran_num = renpy.random.randint(0,1)
+            if ran_num == 0:
+                $ mc.change_locked_clarity(5)
                 $ the_person.draw_person(the_animation = None)
                 the_person "Getting dressed for work. I make this uniform work!" (what_style = "text_message_style")
 
-            elif rand_num == 1:
+            elif ran_num == 1:
+                $ mc.change_locked_clarity(10)
                 $ the_person.draw_person(position = "back_peek", the_animation = None)
                 the_person "I think my boss makes me wear this just because it makes my butt look good. At least he's right!" (what_style = "text_message_style")
 
         else:
-            $ rand_num = renpy.random.randint(0,1)
-            if rand_num == 0:
+            $ ran_num = renpy.random.randint(0,1)
+            if ran_num == 0:
                 $ the_person.draw_person(the_animation = None)
                 the_person "Good morning everyone!"
 
-            elif rand_num == 1:
+            elif ran_num == 1:
                 $ the_person.draw_person(position = "back_peek", the_animation = None)
                 the_person "About to head out the door. I've got a full day ahead of me!"
 
@@ -214,15 +221,15 @@ label instapic_comment_loop(the_person, posted_today = False):
         $ the_choice.call_action(the_person)
     return
 
-label comment_description(type, the_person):
+label comment_description(comment_type, the_person):
     $ the_person.event_triggers_dict["insta_commented_day"] = day
-    if type == "nice":
+    if comment_type == "nice":
         mc.name "Looking good!" (what_style = "text_message_style")
         $ the_person.change_happiness(2, add_to_log = False)
-    elif type == "mean":
+    elif comment_type == "mean":
         mc.name "You should wear something else. That outfit looks terrible!" (what_style = "text_message_style")
         $ the_person.change_happiness(-2, add_to_log = False)
-    elif type == "sexy":
+    elif comment_type == "sexy":
         mc.name "Stunning! Wish I could see you naked!" (what_style = "text_message_style")
         $ her_slut = the_person.effective_sluttiness() + 5*(the_person.get_opinion_score("showing her tits") + the_person.get_opinion_score("showing her ass"))
         if her_slut < 20: #Dislikes it
@@ -249,7 +256,7 @@ label dm_description(the_person):
     return
 
 label dm_option_specific_outfit(the_person):
-    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level")
+    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level", 0)
     if previous_request_level == 0:
         mc.name "I found your profile and thought that you look amazing! I was wondering if you took special requests." (what_style = "text_message_style")
         mc.name "I think you would look amazing wearing this outfit, and I'd pay you $20 if you made an InstaPic for it." (what_style = "text_message_style")
@@ -260,22 +267,22 @@ label dm_option_specific_outfit(the_person):
 
         call outfit_master_manager(show_overwear = False, show_underwear = False) from _call_outfit_master_manager_11
         $ the_outfit = _return
-        if the_outfit is None:
+        if not isinstance(the_outfit, Outfit):
             return False
         else:
             "You put together a list of links to stores she could buy everything from."
-            $ add_dm_outfit_response(the_person, outfit)
+            $ add_dm_outfit_response(the_person, the_outfit)
             return True
+    return False
 
 label dm_option_specific_outfit_response(the_person, the_outfit):
     "Your phone buzzes: it's a response from [the_person.title] on InstaPic."
     $ the_choice = False
-    if the_person.effective_sluttiness() < 10:
-        the_person "I don't take requests, I'm just doing this for fun. Sorry!" (what_style = "text_message_style")
-    elif insta_would_ban(the_outfit):
+    if insta_would_ban(the_outfit):
         the_person "Thanks for the interest, but I couldn't wear that without getting banned!" (what_style = "text_message_style")
         if the_person.has_role(onlyfans_role):
             the_person "If you're interested in that sort of content you should check out my OnlyFanatics!" (what_style = "text_message_style")
+            $ the_person.event_triggers_dict["onlyfans_known"] = True
             "She gives you her OnlyFanatics name."
     elif the_person.judge_outfit(the_outfit, temp_sluttiness_boost = -20) and the_outfit.slut_requirement < 40:
         the_person "It's nice, but I don't think it's the sort of thing my audience is interested in seeing." (what_style = "text_message_style")
@@ -288,6 +295,8 @@ label dm_option_specific_outfit_response(the_person, the_outfit):
         the_person "Thanks for the interest! That's not the kind of thing I would normally wear in one of my posts, but I'm willing to give it a try!" (what_style = "text_message_style")
         the_person "Send me the money and check my Insta page in a day or two! If the reactions are good maybe I'll wear more stuff like that!" (what_style = "text_message_style")
         $ the_choice = True
+    else:
+        the_person "I don't take requests, I'm just doing this for fun. Sorry!" (what_style = "text_message_style")
 
     if the_choice:
         $ the_person.event_triggers_dict["insta_special_request_outfit"] = the_outfit
@@ -300,7 +309,7 @@ label dm_option_specific_outfit_response(the_person, the_outfit):
     return
 
 label dm_option_underwear(the_person):
-    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level")
+    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level", 0)
     if previous_request_level == 0:
         mc.name "I just found your profile, you look so amazing! I wish you could show more, but I know InstaPic would ban you if you did." (what_style = "text_message_style")
         mc.name "Do you take private pictures? I'd be glad to pay just for some shots of you in your underwear. How does $50 sound?" (what_style = "text_message_style")
@@ -320,7 +329,7 @@ label dm_option_underwear(the_person):
 
 label dm_option_underwear_response(the_person):
     "Your phone buzzes: it's a response from [the_person.title] on InstaPic."
-    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level")
+    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level", 0)
     $ the_choice = False
 
     if the_person.effective_sluttiness() < 10:
@@ -337,8 +346,9 @@ label dm_option_underwear_response(the_person):
         $ the_person.apply_outfit(insta_wardrobe.pick_random_outfit()) #She starts from an Insta-specific design.
         $ the_person.outfit.strip_to_underwear(avoid_nudity = True)
         $ the_person.draw_person(the_animation = None)
-        $ the_person.apply_outfit() #Redress
+        $ mc.change_locked_clarity(10)
         "There's a short pause, then she sends an image."
+        $ the_person.apply_outfit() #Redress
         the_person "Enjoy, and remember to leave a nice comment on my profile!" (what_style = "text_message_style")
 
     else:
@@ -349,16 +359,20 @@ label dm_option_underwear_response(the_person):
         $ the_person.outfit.strip_to_underwear()
         $ the_person.draw_person(the_animation = None)
         "There's a short pause, then she sends an image."
+        $ mc.change_locked_clarity(10)
         $ the_person.draw_person(position = "back_peek", the_animation = None)
         "...Then another."
+        $ mc.change_locked_clarity(10)
         $ the_person.draw_person(position = "kneeling1", the_animation = None)
         "...And another."
+        $ mc.change_locked_clarity(10)
         if the_person.get_opinion_score("showing her tits") > 0 and not the_person.outfit.tits_visible():
             if the_person.outfit.can_half_off_to_tits():
                 $ the_person.outfit.remove_clothing_list(the_person.outfit.get_half_off_to_tits_list(), half_off_instead = True)
             else:
                 $ the_person.outfit.remove_clothing_list(the_person.outfit.strip_to_tits())
             $ the_person.draw_person(position = "blowjob", the_animation = None)
+            $ mc.change_locked_clarity(15)
             "...And one more. This time, with her tits out!"
             the_person "I got a little carried away, I'm sure you don't mind!" (what_style = "text_message_style")
             the_person "Have fun with those, and let me know if there's anything else I can do for you!" (what_style = "text_message_style")
@@ -367,9 +381,10 @@ label dm_option_underwear_response(the_person):
         $ the_person.apply_outfit() #Get redressed
 
     if the_choice:
-        the_person "Oh, and if you liked that, check out my OnlyFanatics page. I'm sure you'll love it!" (what_style = "text_message_style")
-        "She sends you a link."
-        $ the_person.event_triggers_dict["onlyfans_known"] = True
+        if the_person.has_role(onlyfans_role) and not the_person.event_triggers_dict.get("onlyfans_known", False):
+            the_person "Oh, and if you liked that, check out my OnlyFanatics page. I'm sure you'll love it!" (what_style = "text_message_style")
+            "She sends you a link."
+            $ the_person.event_triggers_dict["onlyfans_known"] = True
 
         $ mc.business.funds += -50
         if the_person.event_triggers_dict.get("insta_special_request_level",0) < 2:
@@ -382,7 +397,7 @@ label dm_option_underwear_response(the_person):
 
 
 label dm_option_topless(the_person):
-    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level")
+    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level", 0)
     if previous_request_level == 0:
         mc.name "I just found your profile and it blew me away! You're gorgeous!" (what_style = "text_message_style")
         mc.name "Do you do topless shots? Your tits are driving me crazy, I'd pay to see them!" (what_style = "text_message_style")
@@ -404,7 +419,7 @@ label dm_option_topless(the_person):
     return True
 
 label dm_option_topless_response(the_person):
-    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level")
+    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level", 0)
     $ the_choice = False
     "Your phone buzzes: it's a response from [the_person.title] on InstaPic."
     if the_person.effective_sluttiness() < 20:
@@ -424,9 +439,11 @@ label dm_option_topless_response(the_person):
         else:
             $ the_person.outfit.remove_clothing_list(the_person.outfit.get_tit_strip_list())
         $ the_person.draw_person(the_animation = None)
-        $ the_person.apply_outfit()
+
+        $ mc.change_locked_clarity(15)
         "There's a short pause, then she sends an image."
         the_person "Hope that's everything you hoped it would be! Leave a nice comment on my profile, it helps!" (what_style = "text_message_style")
+        $ the_person.apply_outfit()
 
     else: #Does it happily
         $ the_choice = True
@@ -434,14 +451,17 @@ label dm_option_topless_response(the_person):
         $ the_person.apply_outfit() #She starts from her normal outfit (assigned as normal)
         "There's a short pause, then she sends an image."
         $ the_person.draw_person(the_animation = None)
+        $ mc.change_locked_clarity(10)
         if the_person.should_wear_uniform():
             the_person "Here's what my boss makes me wear..." (what_style = "text_message_style")
         else:
+
             the_person "Here's what everyone else sees..." (what_style = "text_message_style")
         if the_person.outfit.can_half_off_to_tits():
             $ the_person.outfit.remove_clothing_list(the_person.outfit.get_half_off_to_tits_list(), half_off_instead = True)
         else:
             $ the_person.outfit.remove_clothing_list(the_person.outfit.get_tit_strip_list())
+        $ mc.change_locked_clarity(15)
         $ the_person.draw_person(the_animation = None)
         "Another pause, then another picture."
         the_person "And here's what you get to see!" (what_style = "text_message_style")
@@ -449,9 +469,11 @@ label dm_option_topless_response(the_person):
         $ the_person.outfit.restore_all_clothing()
         $ the_person.outfit.strip_to_underwear()
         $ the_person.outfit.strip_to_tits() #Gets her into her underwear, then strips her bra off on top of that.
+        $ mc.change_locked_clarity(15)
         $ the_person.draw_person(position = "kneeling1", the_animation = None)
         "Pause, then image."
         the_person "Do you think anyone IRL would guess that I'm a little slut for men on the internet?" (what_style = "text_message_style")
+        $ mc.change_locked_clarity(15)
         $ the_person.draw_person(position = "missionary", the_animation = None)
         "One last picture, this time of her lying down."
         the_person "Just let me know if you want to see more, I love doing these special requests!" (what_style = "text_message_style")
@@ -469,15 +491,12 @@ label dm_option_topless_response(the_person):
             $ the_person.event_triggers_dict["insta_special_request_level"] = 3
         "You wire her the cash you promised."
 
-
-
-
     $ insta_dm_cleanup(the_person)
     $ clear_scene()
     return
 
 label dm_option_nude(the_person):
-    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level")
+    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level", 0)
     if previous_request_level == 0:
         mc.name "I just found your profile and it blew me away! You're gorgeous!" (what_style = "text_message_style")
         mc.name "Do you do nude shots? I'd pay so much to see you naked!" (what_style = "text_message_style")
@@ -499,7 +518,7 @@ label dm_option_nude(the_person):
     return True
 
 label dm_option_nude_response(the_person):
-    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level")
+    $ previous_request_level = the_person.event_triggers_dict.get("insta_special_request_level", 0)
     $ the_choice = False
     if the_person.effective_sluttiness() < 20:
         the_person "I would never do that, for any amount of money!" (what_style = "text_message_style")
@@ -519,13 +538,14 @@ label dm_option_nude_response(the_person):
         $ the_person.outfit.remove_clothing_list(the_person.outfit.get_full_strip_list())
 
         "There's a short pause, then she sends an image."
+        $ mc.change_locked_clarity(15)
         $ the_person.draw_person(the_animation = None)
         the_person "From the front..." (what_style = "text_message_style")
         "Another pause, then another image."
+        $ mc.change_locked_clarity(15)
         $ the_person.draw_person(position = "back_peek", the_animation = None)
         the_person "... and from the back!" (what_style = "text_message_style")
         the_person "Enjoy, and message me any time you have a special request." (what_style = "text_message_style")
-        $ the_person.draw_person(the_animation = None)
         $ the_person.apply_outfit()
 
     else: #Willing and excited
@@ -533,6 +553,7 @@ label dm_option_nude_response(the_person):
         the_person "I love getting requests like this! Of course I can take some shots for you!" (what_style = "text_message_style")
         $ the_person.apply_outfit() #Starts in her normal outfit.
         "There's a short pause, then she sends an image."
+        $ mc.change_locked_clarity(15)
         $ the_person.draw_person(the_animation = None)
         if the_person.should_wear_uniform():
             the_person "Here's what my boss makes me wear..." (what_style = "text_message_style")
@@ -541,19 +562,23 @@ label dm_option_nude_response(the_person):
         $ the_person.outfit.remove_clothing_list(the_person.outfit.get_full_strip_list())
         "Another pause, then another image."
         $ the_person.draw_person(the_animation = None)
+        $ mc.change_locked_clarity(15)
         the_person "And here's what I'm wearing now, because of you!" (what_style = "text_message_style")
         "Another picture, this one from behind."
+        $ mc.change_locked_clarity(15)
         $ the_person.draw_person(position = "back_peek", the_animation = None)
         the_person "How does my butt look? Here, let's get you a better view..."
         "Pause. Picture."
+        $ mc.change_locked_clarity(15)
         $ the_person.draw_person(position = "doggy", the_animation = None)
-        $ the_person.apply_outfit()
         the_person "I hope you have fun with those, I had fun taking them!"
+        $ the_person.apply_outfit()
 
     if the_choice:
-        the_person "Oh, and if you liked that, check out my OnlyFanatics page. I'm sure you'll love it!" (what_style = "text_message_style")
-        "She sends you a link."
-        $ the_person.event_triggers_dict["onlyfans_known"] = True
+        if the_person.has_role(onlyfans_role) and not the_person.event_triggers_dict.get("onlyfans_known", False):
+            the_person "Oh, and if you liked that, check out my OnlyFanatics page. I'm sure you'll love it!" (what_style = "text_message_style")
+            "She sends you a link."
+            $ the_person.event_triggers_dict["onlyfans_known"] = True
 
         $ mc.business.funds += -200
         if the_person.event_triggers_dict.get("insta_special_request_level",0) < 4:
@@ -586,6 +611,6 @@ label insta_interupt_check(the_person): # Returns Something???  a callback label
             $ clear_scene()
             "She hurries away, leaving you to wonder what, exactly, she needs to take care of."
 
-    #TODO: Check if the_person is in the same location as you, or if she would come find you (Lily specfically).
+    #TODO: Check if the_person is in the same location as you, or if she would come find you (Lily specifically).
     #TODO: If at work you notice her slipping away,
     return

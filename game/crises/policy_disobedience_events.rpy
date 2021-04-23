@@ -16,7 +16,7 @@ init -1 python:
         for person in [x for x in mc.business.get_employee_list() if x.should_wear_uniform() and x.is_wearing_uniform()]:
             disobedience_chance = 0
             if not person.judge_outfit(person.planned_uniform):
-                disobedience_chance = person.planned_uniform.slut_requirement - int( person.effective_sluttiness() * (person.obedience / 120.0) ) #Girls who find the outfit too slutty might disobey, scaled by their obedience
+                disobedience_chance = person.planned_uniform.slut_requirement - __builtin__.int( person.effective_sluttiness() * (person.obedience / 120.0) ) #Girls who find the outfit too slutty might disobey, scaled by their obedience
                 disobedience_chance += -5*(person.get_opinion_score("skimpy uniforms"))
             else:
                 disobedience_chance = (120 - person.obedience)/2 #Disobedient girls sometimes don't wear uniforms, just because they don't like following orders. Less likely than when outfits are too slutty.
@@ -67,7 +67,7 @@ label uniform_disobedience_event(planned_uniform, the_person):
     elif planned_uniform.tits_visible():
         if the_person.obedience < 120:
             the_person "I just can't wear it [the_person.mc_title], it's demeaning!"
-            the_person "If I wear your uniform I would have my tits out, all day long! How am I suppose to focus like that?"
+            the_person "If I wear your uniform I would have my tits out, all day long! How am I supposed to focus like that?"
         else:
             the_person "I'm sorry [the_person.mc_title], I know I should be waring it, but..."
             the_person "It's just so revealing! If I could wear a bra, or anything, to keep me a little covered I would be more comfortable."
@@ -120,7 +120,7 @@ label uniform_disobedience_event(planned_uniform, the_person):
                 $ the_person.change_obedience(1 + the_person.get_opinion_score("being submissive"))
 
             $ generalised_strip_description(the_person, the_person.outfit.get_full_strip_list(strip_feet = True, strip_accessories = True))
-
+            $ mc.change_locked_clarity(10)
             "Once stripped down [the_person.possessive_title] puts on her uniform."
             $ the_person.set_uniform(planned_uniform, wear_now = True)
             $ the_person.draw_person()
