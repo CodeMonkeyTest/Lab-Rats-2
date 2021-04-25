@@ -235,7 +235,6 @@ label outro_piledriver(the_girl, the_location, the_object):
                 "She smiles and brings the condom to her mouth. She tips the bottom up and drains it into her mouth."
                 $ the_girl.change_slut_temp(the_girl.get_opinion_score("drinking cum"))
             else:
-<<<<<<< HEAD
                 if not the_girl.on_birth_control or not the_person.event_triggers_dict.get("preg_knows", False):
                     the_girl "Oh god! I'm not on birth control!"
                     "The thought of knocking up [the_girl.title] makes you cum even harder. You gasp and push yourself as deep as you can, draining your balls into [the_girl.possessive_title]'s cunt."
@@ -259,14 +258,6 @@ label outro_piledriver(the_girl, the_location, the_object):
             else:
                 "You pull your cock out at the last minute, stroking it off with one hand as you point it towards [the_girl.possessive_title]'s face."
             $ the_girl.cum_on_face()
-=======
-                "When you let [the_girl.possessive_title] down she reaches for your cock, removes the condom, and ties the end in a knot."
-                the_girl.char "Look at all that cum. Well done."
-
-        else:
-            "You gasp and push yourself as deep as you can, draining your balls into [the_girl.title]'s cunt."
-            $ the_girl.cum_in_vagina()
->>>>>>> upstream/bugfix
             $ piledriver.redraw_scene(the_girl)
             $ climax_controller.do_clarity_release(the_girl)
             $ the_girl.call_dialogue("cum_vagina")

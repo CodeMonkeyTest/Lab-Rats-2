@@ -692,7 +692,7 @@ label aunt_creampie_taboo_break(the_person):
             the_person "I don't know what's happened to me, I just want even more!"
         mc.name "And I want to give you more. I want to get you pregnant. I want to keep cumming inside you and make you mine! My slutty. Pregnant. Aunt."
         the_person "Oh fuck! Do it, knock up your aunt! Make me {b}your{/b} slut! Your pregnant little whore for you to fuck whenever you want!"
-        the_person "Keep filling my pussy with your cum until I'm pregnant! Let's make your cousin a little sibling!
+        the_person "Keep filling my pussy with your cum until I'm pregnant! Let's make your cousin a little sibling!"
         mc.name "Fuck yes! Is that what you are? Are you my slut? Are you going to take my seed like a good slut?"
         the_person "YES! I'm your slut! Fuck your slut again [the_person.mc_title], right now! I want you to breed my pussy again and again! Let's make sure I get pregnant!"
 

@@ -185,13 +185,9 @@ label cousin_sex_review(the_person, the_report):
 
     # Gave creampie while she is not on birth control (extra dialog when she could get pregnant)
     if the_report.get("creampies", 0) > 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
-<<<<<<< HEAD
-        the_person "Fuck, [the_person.mc_title], are we going to tell my mom when I got pregnant?"
-=======
-        the_person "Fuck, [the_person.mc_title], how do I tell my mom how I got pregnant?"
+        the_person "Fuck that was so hot [the_person.mc_title]! So... what are we going to tell my mom when I get pregnant?"
 
     $ del comment_position
->>>>>>> upstream/bugfix
     return
 
 label cousin_flirt_response_low(the_person):

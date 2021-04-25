@@ -1704,7 +1704,7 @@ label wild_creampie_taboo_break(the_person):
             if the_person.relationship != "Single":
                 $ so_title = girl_relationship_to_title(the_person.relationship)
                 the_person "Oh god, I've wanted a good creampie for so long! I'm a terrible [so_title], but I've never let him cum inside me. I wanted a real man to be the one to cum in my fertile pussy and claim me!"
-                the_person "I'm yours now baby! I'm his [so_title] but I'm {b}your{/b} slut! Your cheating little whore!
+                the_person "I'm yours now baby! I'm his [so_title] but I'm {b}your{/b} slut! Your cheating little whore!"
                 the_person "I'll spread my legs for you whenever you want, as long as you promise to breed me! I want to give birth to lots of your children."
 
             else:

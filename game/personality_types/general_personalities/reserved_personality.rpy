@@ -1139,7 +1139,7 @@ label reserved_date_seduction(the_person):
         $ mc.change_locked_clarity(40)
         if the_person.wants_creampie() and the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") >= 0 and the_person.get_opinion_score("creampies") >= 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
             if the_person.get_opinion_score("creampies") > 0: #No condoms, loves creampies, she's basically asking you to knock her up. So... have her ask you to knock her up!
-    	        $ her_title = girl_relationship_to_title(the_person.relationship)
+                $ her_title = girl_relationship_to_title(the_person.relationship)
                 the_person "He's been talking about wanting kids...but I want you to beat him to it. I want you to get me pregnant before he can."
                 the_person "Don't you want to cum in another mans [her_title]? Get her pregnant and make him a cuckold? Give her your cute little baby for him to raise?"
                 the_person "Come home with me. You'll have all night to fuck his unprotected [her_title] on his bed and fill her fertile pussy with your cum. I'm sure by morning you'll have me pregnant."

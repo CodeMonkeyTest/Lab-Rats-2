@@ -106,14 +106,8 @@ label outro_cowgirl(the_girl, the_location, the_object):
     mc.name "Fuck, I'm going to cum!"
 
     #Perhaps an option where she hesitates and you grab her hips and pull her down while you cum.
-<<<<<<< HEAD
-    if the_girl.wants_creampie() or mc.condom:
-        #She drops down on you as you cum.
-        the_girl "Yes! Cum deep! I want your cum deep inside me!"
-=======
     if the_girl.wants_creampie() or mc.condom: #She drops down on you as you cum.
-        the_girl "Yes! Ah!"
->>>>>>> upstream/bugfix
+        the_girl "Yes! Cum deep! I want your cum deep inside me!"
         "[the_girl.title] drops herself down, grinding her hips against yours and pushing your cock as deep into her as possible."
         "Her breath catches in her throat when you pulse out your hot load of cum deep inside of her."
         $ climax_controller = ClimaxController(["Cum inside of her", "pussy"])
