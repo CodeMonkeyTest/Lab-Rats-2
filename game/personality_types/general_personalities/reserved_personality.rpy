@@ -811,8 +811,8 @@ label reserved_condom_bareback_demand(the_person):
             the_person "Come on [the_person.mc_title], I want you to cum inside me!"
             $ the_person.update_birth_control_knowledge()
         else:
-            the_person "You don't need to don't need to do that, I want you to take me raw."
-            the_person "I don't care if you get me pregnant [the_person.mc_title], I just want you to fuck me already!"
+            the_person "You don't need to don't need to do that, I want you to take me raw and fill me up."
+            the_person "I don't care if you get me pregnant [the_person.mc_title], I just want you to fuck me and cum inside me already!"
 
     else:
         if the_person.on_birth_control:
@@ -925,7 +925,7 @@ label reserved_cum_vagina(the_person):
         elif the_person.on_birth_control:
             if the_person.relationship != "Single":
                 $ so_title = SO_relationship_to_title(the_person.relationship)
-                the_person "You've making such a mess of my pussy. I never let my [so_title] do this to me."
+                the_person "You've making such a mess of my pussy. I've never let my [so_title] do this to me!"
                 "She closes her eyes and sighs happily as you cum inside of her."
                 the_person "Oh [the_person.mc_title], look what you've done."
             else:
@@ -935,15 +935,15 @@ label reserved_cum_vagina(the_person):
         elif the_person.effective_sluttiness() > 75 or the_person.get_opinion_score("creampies") > 0:
             if the_person.relationship != "Single":
                 $ so_title = SO_relationship_to_title(the_person.relationship)
-                the_person "Yes, give me all of your cum!"
-                the_person "If I become pregnant I can say it's my [so_title]'s. I'm sure he would believe it."
+                the_person "Yes, give me all of your cum! Fill me up!"
+                the_person "If you get me pregnant, I'll just tell my [so_title] it's his. I'm sure he would believe it."
             else:
                 the_person "Mmm, your semen is so nice and warm. I wonder how potent it is. You might have gotten me pregnant, you know."
         else:
             if the_person.relationship != "Single":
                 $ so_title = SO_relationship_to_title(the_person.relationship)
                 the_person "Oh my... That's a lot of cum. It feels so nice."
-                the_person "I hope my [so_title] doesn't mind if I get pregnant."
+                the_person "I wonder if today was a risky day? I haven't been keeping track. My [so_title] barely fucks me, so I haven't had to."
 
             else:
                 the_person "Oh my... That's a lot of cum. It feels so nice."
@@ -1139,7 +1139,10 @@ label reserved_date_seduction(the_person):
         $ mc.change_locked_clarity(40)
         if the_person.wants_creampie() and the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") >= 0 and the_person.get_opinion_score("creampies") >= 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
             if the_person.get_opinion_score("creampies") > 0: #No condoms, loves creampies, she's basically asking you to knock her up. So... have her ask you to knock her up!
-                the_person "Come home with me. You'll have all night to fill my fertile pussy with your cum. I'm sure by morning you'll have me pregnant."
+    	        $ her_title = girl_relationship_to_title(the_person.relationship)
+                the_person "He's been talking about wanting kids...but I want you to beat him to it. I want you to get me pregnant before he can."
+                the_person "Don't you want to cum in another mans [her_title]? Get her pregnant and make him a cuckold? Give her your cute little baby for him to raise?"
+                the_person "Come home with me. You'll have all night to fuck his unprotected [her_title] on his bed and fill her fertile pussy with your cum. I'm sure by morning you'll have me pregnant."
             else:
                 the_person "Come home with me. You can fuck me all night long, any way you want, with no protection."
         elif the_person.effective_sluttiness() > the_person.get_no_condom_threshold() and the_person.get_opinion_score("bareback sex") > 0:
@@ -1159,7 +1162,7 @@ label reserved_date_seduction(the_person):
             the_person "I'll massage you with them, fuck you with them, and make you cum with them. Over, and over again."
         elif the_person.get_opinion_score("cheating on men") > 0:
             the_person "Come home with me. My [so_title] tries to treat me like a lady..."
-            the_person "But you know that I just want to be treated like a dirty fucking whore."
+            the_person "But only you know that I just want to be treated like a dirty fucking whore."
         else:
             the_person "Come home with me. We can spend all night together."
 
@@ -1372,7 +1375,7 @@ label reserved_sex_review(the_person, the_report):
 
     # Gave creampie while she is not on birth control (extra dialog when she could get pregnant)
     if the_report.get("creampies", 0) > 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
-        the_person "Oh [the_person.mc_title], you should really be more careful, I could get pregnant."
+        the_person "Oh [the_person.mc_title], you should probably be more careful, I could get pregnant..."
 
     $ del comment_position
     return
@@ -1561,7 +1564,7 @@ label reserved_condomless_sex_taboo_break(the_person):
             $ the_person.update_birth_control_knowledge()
             mc.name "Don't you think we're being naughty already?"
             "She bites her lip and nods."
-            the_person "I think we are."
+            the_person "I feel we could be a little naughtier..."
         elif the_person.get_opinion_score("creampies") < 0:
             the_person "You will need to pull out though. I hate having cum dripping out of me all day."
         else:
@@ -1577,7 +1580,7 @@ label reserved_condomless_sex_taboo_break(the_person):
             the_person "When you're going to finish you don't have to pull out unless you want to. Okay?"
             mc.name "Are you on the pill?"
             "She shakes her head."
-            the_person "No, but I trust you to make the decision that is right for both of us."
+            the_person "No, but I think we both know what we want by now..."
             $ the_person.update_birth_control_knowledge()
         elif the_person.get_opinion_score("creampies") < 0:
             if the_person.kids == 0:
@@ -1736,7 +1739,7 @@ label reserved_creampie_taboo_break(the_person):
             if the_person.relationship != "Single":
                 $ so_title = SO_relationship_to_title(the_person.relationship)
                 the_person "Oh lord, I've needed this so badly!"
-                the_person "I don't care about my [so_title], I just want you to treat me like a real woman and get me pregnant!"
+                the_person "I don't care about my [so_title], I just want you to fuck me like a real man and get me pregnant!"
 
             else:
                 the_person "Oh lord, I've needed this so badly! I want you to treat me like a real woman and get me pregnant!"
@@ -1751,7 +1754,7 @@ label reserved_creampie_taboo_break(the_person):
 
 
             else:
-                the_person "I can't believe I let you do that, but it feels so good!"
+                the_person "I can't believe I let you do that, but it felt sooo good!"
 
             the_person "I'll just have to hope you haven't gotten me pregnant. We shouldn't do this again, it's too risky."
 

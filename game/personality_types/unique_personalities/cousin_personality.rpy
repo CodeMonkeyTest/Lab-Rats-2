@@ -344,7 +344,7 @@ label cousin_cum_pullout(the_person):
             else:
                 the_person "Yeah? Is my pussy going to make you cum, you little perv? Well I'm not on birth control so...I dare you cum inside me!"
                 "She puts her arms around your neck and pulls you close."
-                the_person "It's not like you can get me pregnant! I bet you can't, come on! Take your best shot and put a baby inside me [the_person.mc_title]!"
+                the_person "See if you're man enough to knock me up! I bet you can't, come on! Take your best shot and put a baby inside me [the_person.mc_title]!"
         else:
             if the_person.on_birth_control:
                 the_person "Oh fuck, you better pull out!"
@@ -378,8 +378,8 @@ label cousin_cum_vagina(the_person):
         else:
             the_person "Oh fuck yes, you're cumming inside me! Even though I'm not on the pill, you're cumming so much! I bet you love that you pervert!"
             $ the_person.update_birth_control_knowledge()
-            the_person "Well guess what? I'm a pervert just like you. I want you to knock me up! Do it [the_person.mc_title]! Breed your cousin! Make me your little slut!"
-            the_person "Show me I'm yours! Hold me down on your cock and claim me! Make me take all your hot cum like a good little slut!"
+            the_person "Well guess what? I'm a pervert just like you! I want you to knock me up! Do it [the_person.mc_title]! Breed your cousin! Make me your little slut!"
+            the_person "Hold me down on your cock and claim me! Show me I'm yours! Make me take all your hot cum like a good little slut!"
 
     else:
         if the_person.on_birth_control:
