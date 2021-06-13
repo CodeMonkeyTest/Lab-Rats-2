@@ -683,12 +683,8 @@ label wild_flirt_response_affair(the_person):
         else: #She's shy or nervous about being discovered
             "[the_person.possessive_title] laughs, then shakes her head and glances around."
             the_person "You're looking pretty hot too, but you need to be a little more subtle."
-<<<<<<< HEAD
             the_person "I don't any rumours getting back to my [so_title]. Then who will look after all the babies you're going to put in me..."
-=======
-            the_person "I don't any rumours getting back to my [so_title]. That would really throw a wrench into our little affair..."
             $ mc.change_locked_clarity(15)
->>>>>>> upstream/bugfix
             "After checking again that nobody else is watching she reaches over and cups your crotch, massaging the bulge through your pants."
             the_person "Just be patient. I'll be all over this dick soon enough."
             mc.name "Alright, I think I can contain myself a little while longer."
@@ -1353,13 +1349,9 @@ label wild_sex_review(the_person, the_report):
 
     # Gave creampie while she is not on birth control (extra dialog when she could get pregnant)
     if the_report.get("creampies", 0) > 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
-<<<<<<< HEAD
         the_person "Oh baby, you were like a wild animal! You must really want to see me pregnant."
-=======
-        the_person "Oh baby, you are a mad dog, you must really want to see me pregnant."
 
     $ del comment_position
->>>>>>> upstream/bugfix
     return
 
 ## Role Specific Section ##

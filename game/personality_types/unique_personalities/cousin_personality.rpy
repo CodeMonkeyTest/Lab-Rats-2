@@ -687,11 +687,7 @@ label cousin_creampie_taboo_break(the_person):
             the_person "Ugh, whatever. Congratulations, you managed to cum in a girls pussy. You aren't a complete failure of the human race."
 
         else:
-<<<<<<< HEAD
             the_person "Because I'm not on the pill, you idiot. Oh fuck, why does that turn me on so much though? Taking your cum inside me and getting bred like the cousin-fucking little whore I am..."
-=======
-            the_person "Because I'm not on the pill, you idiot. I thought you were supposed to be the smart one in the family."
->>>>>>> upstream/bugfix
             $ the_person.update_birth_control_knowledge()
             the_person "Whatever, I dare you to fuck me again! Don't pull out, just hold me down on your cock and cum deep in my fertile womb! Lets see if you have the balls to breed your own cousin!"
 

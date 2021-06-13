@@ -166,13 +166,9 @@ label aunt_sex_review(the_person, the_report):
 
     # Gave creampie while she is not on birth control (extra dialog when she could get pregnant)
     if the_report.get("creampies", 0) > 0 and not the_person.on_birth_control and not the_person.event_triggers_dict.get("preg_knows", False):
-<<<<<<< HEAD
         the_person "At this rate, your cousin is going to have a new brother or sister soon. I can't wait..."
-=======
-        the_person "And how am I going to explain to my sister when you got me pregnant?"
 
     $ del comment_position
->>>>>>> upstream/bugfix
     return
 
 label aunt_flirt_response_low(the_person):

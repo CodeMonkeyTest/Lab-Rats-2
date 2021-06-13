@@ -252,7 +252,7 @@ label outro_piledriver(the_girl, the_location, the_object):
                 "You take a moment to catch your breath, then sit back and pull your cock out of [the_girl.title]."
                 "You keep her on her back for a few more seconds, enjoying the way the position keeps your semen inside of her."
 
-        "Cum on her face":
+    elif the_choice == "Cum on her face":
             if mc.condom:
                 "You pull your cock out at the last minute, whipping the condom off with one hand as you aim it towards [the_girl.possessive_title]'s face."
             else:
